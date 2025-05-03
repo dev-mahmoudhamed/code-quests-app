@@ -48,3 +48,38 @@
         margin-bottom: 4px;
     }
 }
+
+.search-container {
+    position: relative;
+    min-width: 250px;
+}
+
+.search-input {
+    padding-right: 35px;
+    border-radius: 20px;
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+}
+
+.search-input:focus {
+    box-shadow: none;
+    border-color: #0F172A;
+}
+
+.search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #6c757d;
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.search-icon:hover {
+    color: #0F172A;
+}
+
+.search-icon:active {
+    color: #38bdf8;
+}

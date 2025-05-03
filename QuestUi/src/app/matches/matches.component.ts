@@ -18,30 +18,31 @@ import { MatchStatus } from '../Models/match';
 export class MatchesComponent implements OnInit {
   matches: any[] = [];
   filteredMatches: any[] = [];
-  filter: MatchStatus = MatchStatus.All;
+  status: MatchStatus = MatchStatus.All;
+  searchTerm: string = '';
 
   private apiService = inject(ApiService);
 
   ngOnInit() {
-    this.apiService.getMatches(this.filter).subscribe(matches => {
+    this.getMatches();
+  }
+
+  getMatches(filter?: string) {
+    this.apiService.getMatches(this.status, filter).subscribe(matches => {
       this.matches = matches;
-      this.applyFilter(this.filter);
+      this.applyFilter(this.status);
     });
   }
 
-  applyFilter(filter: MatchStatus) {
-    this.filter = filter;
-    this.filteredMatches = filter === MatchStatus.All
+  applyFilter(status: MatchStatus) {
+    this.status = status;
+    this.filteredMatches = status === MatchStatus.All
       ? this.matches
-      : this.matches.filter(m => m.status === filter);
+      : this.matches.filter(m => m.status === status);
   }
 
-  addToPlaylist(matchId: number) {
-    this.apiService.addToPlaylist(matchId).subscribe();
-  }
-
-  setFilter(f: MatchStatus) {
-    this.filter = f;
-    this.ngOnInit();
+  setFilter(s: MatchStatus) {
+    this.status = s;
+    this.getMatches();
   }
 }

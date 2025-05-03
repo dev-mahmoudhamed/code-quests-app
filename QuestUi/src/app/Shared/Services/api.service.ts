@@ -7,8 +7,12 @@ import { environment } from '../../../environments/environment.development';
 export class ApiService {
   private http = inject(HttpClient);
 
-  getMatches(MatchStaus: number) {
-    return this.http.get<Match[]>(`${environment.apiUrl}/Matches?status=${MatchStaus}`);
+  getMatches(matchStatus: number, filter?: string) {
+    let url = `${environment.apiUrl}/Matches?status=${matchStatus}`;
+    if (filter) {
+      url += `&filter=${filter}`;
+    }
+    return this.http.get<Match[]>(url);
   }
 
   addToPlaylist(matchId: number) {
@@ -18,8 +22,13 @@ export class ApiService {
   getPlaylist() {
     return this.http.get<Match[]>(`${environment.apiUrl}/playlist`);
   }
+
   removeFromPlaylist(matchId: number) {
     return this.http.delete(`${environment.apiUrl}/Playlist/${matchId}`, {});
+  }
+
+  GetMyPlayListIds() {
+    return this.http.get<number[]>(`${environment.apiUrl}/myListIds`);
   }
 
 }

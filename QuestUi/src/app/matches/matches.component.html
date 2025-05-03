@@ -2,10 +2,17 @@
     <div class="container">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h2 class="mb-0">Browse Matches</h2>
+
+            <div class="position-relative search-container mx-4">
+                <input type="text" class="form-control search-input" placeholder="Search matches..."
+                    [(ngModel)]="searchTerm" (keyup.enter)="getMatches(searchTerm)">
+                <i (click)="getMatches(searchTerm)" class="fas fa-search search-icon"></i>
+            </div>
+
             <div class="filter-group">
-                <button type="button" (click)="setFilter(0)" [class.active]="filter === 0">All Matches</button>
-                <button type="button" (click)="setFilter(1)" [class.active]="filter === 1">Live</button>
-                <button type="button" (click)="setFilter(2)" [class.active]="filter === 2">Replays</button>
+                <button type="button" (click)="setFilter(0)" [class.active]="status === 0">All Matches</button>
+                <button type="button" (click)="setFilter(1)" [class.active]="status === 1">Live</button>
+                <button type="button" (click)="setFilter(2)" [class.active]="status === 2">Replays</button>
             </div>
         </div>
 

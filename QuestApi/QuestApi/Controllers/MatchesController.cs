@@ -11,6 +11,7 @@ namespace QuestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class MatchesController : ControllerBase
     {
         private readonly QuestDbContext _DbContext;
@@ -23,15 +24,17 @@ namespace QuestApi.Controllers
         }
 
         [HttpGet]
-        public async Task<List<Match>> GetMatchesAsync(MatchStatus status)
+        public async Task<List<Match>> GetMatchesAsync(MatchStatus status, string? filter)
         {
             IQueryable<Match> query = _DbContext.Matches;
 
             if (status != MatchStatus.All)
                 query = query.Where(m => m.Status == status);
 
-            return await query.ToListAsync();
+            if (filter != null)
+                query = query.Where(m => m.Competition.Contains(filter));
 
+            return await query.ToListAsync();
         }
 
     }

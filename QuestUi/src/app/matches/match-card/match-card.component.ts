@@ -1,7 +1,8 @@
 import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
-import { Match } from '../../Models/match';
+import { Match, MatchStatus } from '../../Models/match';
 import { CommonModule, DatePipe } from '@angular/common';
 import { ApiService } from '../../Shared/Services/api.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-match-card',
@@ -14,6 +15,8 @@ import { ApiService } from '../../Shared/Services/api.service';
 export class MatchCardComponent {
   private datePipe = inject(DatePipe);
   private apiService = inject(ApiService);
+  private toastr = inject(ToastrService);
+
   isAdded = false;
   @Input() isPlaylistPage = false;
   @Input() match!: Match;
@@ -33,7 +36,12 @@ export class MatchCardComponent {
   addToPlaylist(id?: number) {
     this.isAdded = !this.isAdded;
     this.apiService.addToPlaylist(id!).subscribe({
-      next: () => {
+      next: (res) => {
+        this.toastr.success('Match added to playlist!', 'Success', {
+          timeOut: 3000,
+          progressBar: true,
+          closeButton: true,
+        });
       },
       error: (err) => {
         console.error('Error adding to playlist', err);
@@ -42,15 +50,32 @@ export class MatchCardComponent {
     });
   }
 
+
   removeFromPlaylist(id?: number) {
     this.apiService.removeFromPlaylist(id!).subscribe({
       next: () => {
         this.removeMatchEvent.emit();
+        this.toastr.success('Match removed from playlist!', 'Success', {
+          timeOut: 3000,
+          progressBar: true,
+          closeButton: true,
+        });
       },
       error: (err) => {
         console.error('Error removing from playlist', err);
       }
     });
+  }
+
+  getStatusText(status: number): string {
+    switch (status) {
+      case MatchStatus.Live:
+        return MatchStatus[MatchStatus.Live];
+      case MatchStatus.Replay:
+        return MatchStatus[MatchStatus.Replay];
+      default:
+        return 'UNKNOWN';
+    }
   }
 
 }

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QuestApi.Data;
@@ -9,6 +10,7 @@ namespace QuestApi.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+    [Authorize]
     public class PlaylistController : ControllerBase
     {
         private readonly QuestDbContext _DbContext;
@@ -35,28 +37,72 @@ namespace QuestApi.Controllers
         }
 
         [HttpPost("{matchId:int}")]
-        public async Task AddToPlaylist(int matchId)
+        public async Task<ApiResponse<bool>> AddToPlaylist(int matchId)
         {
-            var userId = (await GetCurrentUser()).Id;
+            try
+            {
+                var userId = (await GetCurrentUser()).Id;
 
-            var playlistItem = new Playlist { UserId = userId, MatchId = matchId };
-            await _DbContext.Playlists.AddAsync(playlistItem);
-            await _DbContext.SaveChangesAsync();
+                var playlistItem = new Playlist { UserId = userId, MatchId = matchId };
+                await _DbContext.Playlists.AddAsync(playlistItem);
+                await _DbContext.SaveChangesAsync();
+
+                var result = new ApiResponse<bool>
+                {
+                    StatusCode = 200,
+                    Message = "Successfully added to playlist",
+                    Data = true
+                };
+                return result;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+
         }
 
         [HttpDelete("{matchId:int}")]
-        public async Task RemoveFromPlaylist(int matchId)
+        public async Task<ApiResponse<bool>> RemoveFromPlaylist(int matchId)
         {
-            var userId = (await GetCurrentUser()).Id;
-
-            var playlistItem = _DbContext.Playlists.FirstOrDefault(p => p.UserId == userId && p.MatchId == matchId);
-            if (playlistItem != null)
+            try
             {
-                _DbContext.Playlists.Remove(playlistItem);
-                await _DbContext.SaveChangesAsync();
+                var userId = (await GetCurrentUser()).Id;
+
+                var playlistItem = _DbContext.Playlists.FirstOrDefault(p => p.UserId == userId && p.MatchId == matchId);
+                if (playlistItem != null)
+                {
+                    _DbContext.Playlists.Remove(playlistItem);
+                    await _DbContext.SaveChangesAsync();
+                }
+
+                var result = new ApiResponse<bool>
+                {
+                    StatusCode = 200,
+                    Message = "Successfully removed from playlist",
+                    Data = true
+                };
+                return result;
+
             }
+            catch (Exception ex)
+            {
+                throw;
+            }
+            
         }
 
+        [HttpGet("myListIds")]
+        public async Task<List<int>> GetMyPlayListIds()
+        {
+            var userId = (await GetCurrentUser()).Id;
+            var playListIds = await _DbContext.Playlists
+                .Where(p => p.UserId == userId)
+                .Select(p => p.MatchId)
+                .ToListAsync();
+
+            return playListIds;
+        }
         private async Task<AppUser> GetCurrentUser()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)

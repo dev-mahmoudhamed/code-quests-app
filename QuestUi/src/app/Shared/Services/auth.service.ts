@@ -27,29 +27,20 @@ export class AuthService {
         return this.http.post<{ token: string }>(`${environment.apiUrl}/auth/login`, credentials)
             .pipe(
                 tap(response => {
-                    this.isLoggedInSubject.next(this.isAuthenticated());
                     this.storeToken(response.token);
                     this.currentUserSubject.next(this.decodeToken(response.token));
+                    this.isLoggedInSubject.next(this.isAuthenticated());
                     this.router.navigate(['/matches']);
-                    this.testStatus("After login\n");
-
                 })
             );
     }
 
     logout() {
-        this.isLoggedInSubject.next(this.isAuthenticated());
         localStorage.removeItem(this.authTokenKey);
+        this.isLoggedInSubject.next(this.isAuthenticated());
         this.currentUserSubject.next(null);
-        this.testStatus("After logout\n");
-    }
-
-    testStatus(string: string) {
-        console.log(string);
-        console.log("isAuthenticated ---> ", this.isAuthenticated());
-        this.isLoggedIn$.subscribe(isLoggedIn => {
-            console.log('Is logged in:', isLoggedIn);
-        });
+        window.location.reload();
+        //   this.router.navigate(['/test']);
     }
 
     get currentUserId(): number | null {
