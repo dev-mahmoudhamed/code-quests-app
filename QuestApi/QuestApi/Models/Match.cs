@@ -27,7 +27,7 @@ namespace QuestApi.Models
 
     public enum MatchStatus
     {
-        Live,
-        Replay
+        Live = 1,
+        Replay= 2
     }
 }

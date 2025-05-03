@@ -51,7 +51,15 @@ builder.Services.AddDbContext<QuestDbContext>(opts =>
 builder.Services.AddIdentity<AppUser, IdentityRole<int>>()
     .AddEntityFrameworkStores<QuestDbContext>();
 
-// Configure JWT Bearer
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAngularApp",
+        policy => policy.WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod()
+                        .AllowCredentials());
+});
+
 var jwt = builder.Configuration.GetSection("Jwt");
 // in produciton environment we keep key scret place Azure Key Vault or Environment Variables.  
 var key = Encoding.UTF8.GetBytes(jwt["Key"]!);
@@ -81,8 +89,8 @@ builder.Services
 builder.Services.AddControllers();
 
 var app = builder.Build();
+app.UseCors("AllowAngularApp");
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

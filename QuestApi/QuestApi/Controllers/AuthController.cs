@@ -26,7 +26,12 @@ namespace QuestApi.Controllers
         [HttpPost("register"), AllowAnonymous]
         public async Task<IActionResult> Register(RegisterDto dto)
         {
-            var user = new AppUser { UserName = dto.Username, Email = dto.Email };
+            var user = new AppUser
+            {
+                FullName = dto.FullName,
+                UserName = dto.Email,
+                Email = dto.Email
+            };
             var res = await _userMgr.CreateAsync(user, dto.Password);
             if (!res.Succeeded) return BadRequest(res.Errors);
             return NoContent();
@@ -35,15 +40,16 @@ namespace QuestApi.Controllers
         [HttpPost("login"), AllowAnonymous]
         public async Task<IActionResult> Login(LoginDto dto)
         {
-            var user = await _userMgr.FindByEmailAsync(dto.Username);
+            var user = await _userMgr.FindByEmailAsync(dto.Email);
             if (user == null || !await _userMgr.CheckPasswordAsync(user, dto.Password))
                 return Unauthorized();
 
             var claims = new[]
             {
-          new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
-          new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName)
-        };
+                new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
+                new Claim(JwtRegisteredClaimNames.Email, user.Email)
+            };
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
             var token = new JwtSecurityToken(
