@@ -11,7 +11,13 @@ export class AuthService {
     private authTokenKey = 'auth_token';
     private currentUserSubject = new BehaviorSubject<any>(null);
 
-    constructor(private http: HttpClient, private router: Router) { }
+    private isLoggedInSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
+    isLoggedIn$ = this.isLoggedInSubject.asObservable();
+
+    constructor(
+        private http: HttpClient,
+        private router: Router) {
+    }
 
     register(registerDto: RegisterDto) {
         return this.http.post(`${environment.apiUrl}/auth/register`, registerDto);
@@ -21,16 +27,29 @@ export class AuthService {
         return this.http.post<{ token: string }>(`${environment.apiUrl}/auth/login`, credentials)
             .pipe(
                 tap(response => {
+                    this.isLoggedInSubject.next(this.isAuthenticated());
                     this.storeToken(response.token);
                     this.currentUserSubject.next(this.decodeToken(response.token));
+                    this.router.navigate(['/matches']);
+                    this.testStatus("After login\n");
+
                 })
             );
     }
 
     logout() {
+        this.isLoggedInSubject.next(this.isAuthenticated());
         localStorage.removeItem(this.authTokenKey);
         this.currentUserSubject.next(null);
-        this.router.navigate(['/login']);
+        this.testStatus("After logout\n");
+    }
+
+    testStatus(string: string) {
+        console.log(string);
+        console.log("isAuthenticated ---> ", this.isAuthenticated());
+        this.isLoggedIn$.subscribe(isLoggedIn => {
+            console.log('Is logged in:', isLoggedIn);
+        });
     }
 
     get currentUserId(): number | null {

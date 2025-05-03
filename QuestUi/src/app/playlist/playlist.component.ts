@@ -2,10 +2,12 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../Shared/Services/api.service';
+import { MatchCardComponent } from '../matches/match-card/match-card.component';
+import { RouterLink } from '@angular/router';
 
 @Component({
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, MatchCardComponent, RouterLink],
   templateUrl: './playlist.component.html',
 })
 export class PlaylistComponent implements OnInit {
@@ -14,14 +16,14 @@ export class PlaylistComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit() {
-    this.apiService.getPlaylist().subscribe(playlist => {
-      this.playlist = playlist;
+    this.loadPlaylist();
+  }
+
+  loadPlaylist(): void {
+    this.apiService.getPlaylist().subscribe({
+      next: (data) => this.playlist = data,
+      error: (err) => console.error('Failed to load playlist', err)
     });
   }
 
-  removeFromPlaylist(matchId: number) {
-    this.apiService.removeFromPlaylist(matchId).subscribe(() => {
-      this.playlist = this.playlist.filter(m => m.id !== matchId);
-    });
-  }
 }

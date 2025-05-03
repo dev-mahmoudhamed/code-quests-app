@@ -1,11 +1,28 @@
 .navbar {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: white;
+    box-shadow: 0 2px 4px rgba(253, 253, 253, 0.1);
 }
 
-.nav-link:hover {
-    text-decoration: underline;
+.navbar .nav-link {
+    text-decoration: none !important;
 }
 
 .navbar .nav-link:hover {
-    text-decoration: underline;
+    text-decoration: none;
+}
+
+.navbar .nav-link .fa-bars {
+    color: white;
+    transition: color 0.3s;
+}
+
+.navbar .nav-link:hover .fa-bars {
+    color: #38bdf8;
+}
+
+.container-fluid {
+    padding-left: 8rem;
+    padding-right: 3rem;
+    padding-top: 0rem;
+    padding-bottom: 0;
 }

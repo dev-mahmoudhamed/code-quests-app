@@ -1,0 +1,39 @@
+<div class="container py-4">
+
+    <!-- Header -->
+    <div class="d-flex align-items-baseline mb-4">
+        <h2 class="mb-0">My Playlist</h2>
+        <small class="text-muted ms-2">
+            {{ playlist.length }} {{ playlist.length === 1 ? 'match' : 'matches' }}
+        </small>
+    </div>
+
+    <ng-container *ngIf="playlist?.length; else emptyState">
+
+        <div class="row g-3 ">
+            <div class="col-12 col-sm-6 col-lg-4" *ngFor="let match of playlist">
+                <app-match-card (removeMatchEvent)="loadPlaylist()" [isPlaylistPage]="true" [match]="{
+                    matchId: match.matchId,
+                    title: match.title,
+                    competition: match.competition,
+                    date: match.date,
+                    status: match.status,
+                  }"></app-match-card>
+            </div>
+        </div>
+
+    </ng-container>
+
+    <ng-template #emptyState>
+        <div class="text-center mt-5">
+            <p class="text-muted mb-4">
+                You haven't added any matches to your playlist yet.
+            </p>
+            <button routerLink="/matches" class="btn btn-dark px-4">
+                <i class="fas fa-arrow-left me-2"></i>
+                Browse Matches
+            </button>
+        </div>
+    </ng-template>
+
+</div>

@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using QuestApi.Data;
 using QuestApi.Models;
 using System.Security.Claims;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace QuestApi.Controllers
 {
@@ -24,33 +25,14 @@ namespace QuestApi.Controllers
         [HttpGet]
         public async Task<List<Match>> GetMatchesAsync(MatchStatus status)
         {
-            var matches = await _DbContext.Matches.Where(m => m.Status == status).ToListAsync();
-            return matches;
+            IQueryable<Match> query = _DbContext.Matches;
+
+            if (status != MatchStatus.All)
+                query = query.Where(m => m.Status == status);
+
+            return await query.ToListAsync();
+
         }
-
-        //    [HttpPost, Authorize]
-        //    public async Task<Match> CreateMatchAsync(Match match)
-        //    {
-        //        var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
-        //        if (userId == null)
-        //            throw new UnauthorizedAccessException();
-
-        //        var user = await _userManager.FindByIdAsync(userId);
-        //        if (userId == null)
-        //            throw new UnauthorizedAccessException();
-
-        //        var entity = await _DbContext.Matches.AddAsync(match);
-        //        await _DbContext.SaveChangesAsync();
-        //        return entity.Entity;
-        //    }
-
-        //    [HttpDelete("{id}")]
-        //    public async Task DeleteMatchAsync(int id)
-        //    {
-        //        var match = new Match { MatchId = id };
-        //        _DbContext.Matches.Remove(match);
-        //        await _DbContext.SaveChangesAsync();
-        //    }
 
     }
 }

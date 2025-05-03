@@ -1,16 +1,50 @@
-/* src/app/features/match‑explorer/match‑explorer.component.scss */
-.spacer {
-    flex: 1 1 auto;
+.filter-group {
+    display: flex;
+    gap: 8px;
+    background: #F1F5FA;
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    padding: 4px 10px;
+    align-items: center;
 }
 
-.filter-bar {
-    margin: 16px;
-    padding: 8px 16px;
+.filter-group button {
+    border: none;
+    background: transparent;
+    color: #6c757d;
+    padding: 4px 16px;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    cursor: pointer;
+    outline: none;
 }
 
-.match-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-    padding: 16px;
+.filter-group button+button {
+    margin-left: 1px;
+}
+
+.filter-group button.active,
+.filter-group button:focus {
+    background: #fff;
+    color: #0F172A;
+}
+
+/* Hover state for inactive buttons */
+.filter-group button:hover:not(.active) {
+    background: #e2e8f0;
+    color: #212529;
+}
+
+@media (max-width: 575.98px) {
+    .filter-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-group button {
+        flex: 1 1 100%;
+        text-align: center;
+        margin-bottom: 4px;
+    }
 }

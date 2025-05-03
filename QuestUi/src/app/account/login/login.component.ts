@@ -28,11 +28,11 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.invalid) return;
-
     const credentials = this.loginForm.getRawValue();
     this.auth.login(credentials).subscribe({
       next: () => {
         this.router.navigate(['/']);
+
       },
       error: (err) => {
         console.error('Login failed:', err);

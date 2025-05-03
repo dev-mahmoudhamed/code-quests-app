@@ -12,7 +12,6 @@ namespace QuestApi.Data
         : base(options) { }
 
 
-        public DbSet<AppUser> Users { get; set; }
         public DbSet<Match> Matches { get; set; }
         public DbSet<Playlist> Playlists { get; set; }
 
@@ -33,9 +32,18 @@ namespace QuestApi.Data
                 .WithMany(m => m.Playlists)
                 .HasForeignKey(p => p.MatchId);
 
-            //modelBuilder.Entity<Match>()
-            //    .Property(m => m.Status)
-            //    .HasConversion<string>();
+            modelBuilder.Entity<AppUser>(entity =>
+            {
+                entity.ToTable(name: "Users");
+            });
+
+            modelBuilder.Ignore<IdentityRole<int>>();
+            modelBuilder.Ignore<IdentityRoleClaim<int>>();
+            modelBuilder.Ignore<IdentityUserClaim<int>>();
+            modelBuilder.Ignore<IdentityUserLogin<int>>();
+            modelBuilder.Ignore<IdentityUserRole<int>>();
+            modelBuilder.Ignore<IdentityUserToken<int>>();
+
         }
     }
 }

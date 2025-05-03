@@ -7,19 +7,19 @@ import { environment } from '../../../environments/environment.development';
 export class ApiService {
   private http = inject(HttpClient);
 
-  getMatches() {
-    return this.http.get<Match[]>(`${environment.apiUrl}/matches`);
+  getMatches(MatchStaus: number) {
+    return this.http.get<Match[]>(`${environment.apiUrl}/Matches?status=${MatchStaus}`);
   }
 
   addToPlaylist(matchId: number) {
-    return this.http.get<Match[]>(`${environment.apiUrl}/matches`);
+    return this.http.post(`${environment.apiUrl}/Playlist/${matchId}`, {});
   }
 
   getPlaylist() {
-    return this.http.get<Match[]>(`${environment.apiUrl}/matches`);
+    return this.http.get<Match[]>(`${environment.apiUrl}/playlist`);
   }
   removeFromPlaylist(matchId: number) {
-    return this.http.get<Match[]>(`${environment.apiUrl}/matches`);
+    return this.http.delete(`${environment.apiUrl}/Playlist/${matchId}`, {});
   }
 
 }

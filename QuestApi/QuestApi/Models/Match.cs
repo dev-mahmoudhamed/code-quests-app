@@ -16,7 +16,7 @@ namespace QuestApi.Models
         public string Competition { get; set; } = string.Empty;
 
         [Required]
-        public DateTime DateUtc { get; set; }
+        public DateTime Date { get; set; }
 
         [Required]
         public MatchStatus Status { get; set; }
@@ -27,7 +27,8 @@ namespace QuestApi.Models
 
     public enum MatchStatus
     {
+        All = 0,
         Live = 1,
-        Replay= 2
+        Replay = 2
     }
 }

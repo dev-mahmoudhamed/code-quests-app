@@ -1,0 +1,24 @@
+<section class="browse-matches py-4">
+    <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2 class="mb-0">Browse Matches</h2>
+            <div class="filter-group">
+                <button type="button" (click)="setFilter(0)" [class.active]="filter === 0">All Matches</button>
+                <button type="button" (click)="setFilter(1)" [class.active]="filter === 1">Live</button>
+                <button type="button" (click)="setFilter(2)" [class.active]="filter === 2">Replays</button>
+            </div>
+        </div>
+
+        <div class="row g-3 ">
+            <div class="col-12 col-sm-6 col-lg-4" *ngFor="let match of filteredMatches">
+                <app-match-card [match]="{
+                    matchId: match.matchId,
+                    title: match.title,
+                    competition: match.competition,
+                    date: match.date,
+                    status: match.status,
+                  }"></app-match-card>
+            </div>
+        </div>
+    </div>
+</section>

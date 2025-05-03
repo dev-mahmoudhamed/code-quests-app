@@ -1,0 +1,11 @@
+/* Make sure our dark button matches your navbar color */
+.btn-dark {
+    background-color: #0F172A;
+    border-color: #0F172A;
+}
+
+/* Optional: hover effect */
+.btn-dark:hover {
+    background-color: #131F3A;
+    border-color: #131F3A;
+}
