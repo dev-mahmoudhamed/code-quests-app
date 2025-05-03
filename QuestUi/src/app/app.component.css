@@ -1,0 +1,7 @@
+.nav-buttons {
+    margin-left: auto;
+}
+
+mat-toolbar button {
+    color: white;
+}

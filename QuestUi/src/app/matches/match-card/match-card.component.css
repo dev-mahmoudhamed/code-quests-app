@@ -1,0 +1,27 @@
+/* src/app/features/match‑explorer/match‑card/match‑card.component.scss */
+mat-card {
+    padding: 16px;
+    position: relative;
+}
+
+mat-chip {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.time-label {
+    margin-top: 8px;
+    color: #666;
+    font-size: 0.9em;
+}
+
+.teams {
+    margin: 24px 0;
+    text-align: center;
+}
+
+.score {
+    margin: 0 8px;
+    font-weight: bold;
+}
