@@ -67,6 +67,12 @@ export class MatchCardComponent {
     });
   }
 
+  watchMatch() {
+    // we can pass url to the function in production environment
+    var url = "https://youtu.be/keEVy7a1PpI?si=SWOroS5KBANp0YJi";
+    window.open(url, '_blank');
+  }
+
   getStatusText(status: number): string {
     switch (status) {
       case MatchStatus.Live:

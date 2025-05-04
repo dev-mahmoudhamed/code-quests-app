@@ -52,3 +52,24 @@
 .btn:active {
     transform: translateY(0);
 }
+
+.btn-watch {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(15, 23, 42, 0.9);
+    color: white;
+    border-radius: 20px;
+    padding: 8px 16px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .btn-watch {
+    opacity: 1;
+}
+
+.btn-watch:hover {
+    background-color: #0F172A;
+}

@@ -1,7 +1,12 @@
-
 # .NET build folders
 **/bin/
 **/obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.userosscache
+*.sln.docstates
 
 # Node.js dependencies
 **/node_modules/

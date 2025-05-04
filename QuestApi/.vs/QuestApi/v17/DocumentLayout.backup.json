@@ -1,28 +1,7 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|c:\\users\\devma\\onedrive\\desktop\\code-quests-app\\questapi\\questapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|c:\\users\\devma\\onedrive\\desktop\\code-quests-app\\questapi\\questapi\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|c:\\users\\devma\\onedrive\\desktop\\code-quests-app\\questapi\\questapi\\models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\models\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|c:\\users\\devma\\onedrive\\desktop\\code-quests-app\\questapi\\questapi\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|c:\\users\\devma\\onedrive\\desktop\\code-quests-app\\questapi\\questapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -30,7 +9,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -39,71 +18,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "QuestApi\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "QuestApi\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAcAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-03T20:06:48.329Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ApiResponse.cs",
-              "DocumentMoniker": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Models\\ApiResponse.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Models\\ApiResponse.cs",
-              "ToolTip": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Models\\ApiResponse.cs",
-              "RelativeToolTip": "QuestApi\\Models\\ApiResponse.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T19:56:51.014Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MatchesController.cs",
-              "DocumentMoniker": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\MatchesController.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Controllers\\MatchesController.cs",
-              "ToolTip": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\MatchesController.cs",
-              "RelativeToolTip": "QuestApi\\Controllers\\MatchesController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA0AAAAOAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T19:42:52.11Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "PlaylistController.cs",
-              "DocumentMoniker": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\PlaylistController.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Controllers\\PlaylistController.cs",
-              "ToolTip": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\PlaylistController.cs",
-              "RelativeToolTip": "QuestApi\\Controllers\\PlaylistController.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACoAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T19:42:49.794Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "QuestApi\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAABAAAAAAAAAAAAAAwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-03T19:42:47.569Z",
-              "EditorCaption": ""
             }
           ]
         }

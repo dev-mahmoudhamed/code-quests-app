@@ -20,23 +20,32 @@
             </div>
         </div>
 
-        <button class="btn w-100" [ngClass]="
+        <div class="d-flex flex-column gap-2">
+            <!-- Existing playlist button -->
+            <button class="btn w-100" [ngClass]="
+                    isPlaylistPage
+                    ? 'btn-danger'
+                    : isAdded
+                    ? 'btn-added'
+                    : 'btn-default'
+                " (click)="isPlaylistPage ? removeFromPlaylist(match.matchId) : addToPlaylist(match.matchId)">
+                <i class="bi me-2" *ngIf="!isPlaylistPage" [class.bi-check-circle]="isAdded"
+                    [class.bi-plus-circle]="!isAdded"></i>
+                <i *ngIf="isPlaylistPage" class="fas fa-trash-alt me-2"></i>
+                {{
                 isPlaylistPage
-                ? 'btn-danger'
+                ? 'Remove from Playlist'
                 : isAdded
-                ? 'btn-added'
-                : 'btn-default'
-            " (click)="isPlaylistPage ? removeFromPlaylist(match.matchId) : addToPlaylist(match.matchId)">
-            <i class="bi me-2" *ngIf="!isPlaylistPage" [class.bi-check-circle]="isAdded"
-                [class.bi-plus-circle]="!isAdded"></i>
-            <i *ngIf="isPlaylistPage" class="fas fa-trash-alt me-2"></i>
-            {{
-            isPlaylistPage
-            ? 'Remove from Playlist'
-            : isAdded
-            ? 'Added to Playlist'
-            : 'Add to Playlist'
-            }}
-        </button>
+                ? 'Added to Playlist'
+                : 'Add to Playlist'
+                }}
+            </button>
+
+            <button class="btn btn-outline-primary w-100" (click)="watchMatch()">
+                <i class="fas fa-play-circle me-2"></i>
+                Watch Match
+            </button>
+
+        </div>
     </div>
 </div>
