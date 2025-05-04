@@ -25,6 +25,11 @@ export class MatchesComponent implements OnInit {
 
   ngOnInit() {
     this.getMatches();
+
+    this.intervalId = setInterval(() => {
+      this.getMatches();
+    }, 45 * 1000);
+
   }
 
   getMatches(filter?: string) {
@@ -44,5 +49,14 @@ export class MatchesComponent implements OnInit {
   setFilter(s: MatchStatus) {
     this.status = s;
     this.getMatches();
+  }
+
+
+  private intervalId: any;
+
+
+
+  ngOnDestroy() {
+    clearInterval(this.intervalId);
   }
 }
