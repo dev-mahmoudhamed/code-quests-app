@@ -69,4 +69,15 @@ export class AuthService {
             return null;
         }
     }
+
+    getTokenExpiration(): Date | null {
+        const token = this.getToken();
+        if (!token) return null;
+
+        const payload = this.decodeToken(token);
+        if (!payload?.exp) return null;
+
+        // exp is in seconds, convert to millisseconds
+        return new Date(payload.exp * 1000);
+    }
 }

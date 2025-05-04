@@ -1,5 +1,5 @@
 // matches.component.ts (traditional approach)
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { MatchCardComponent } from './match-card/match-card.component';
@@ -15,11 +15,12 @@ import { MatchStatus } from '../Models/match';
   templateUrl: './matches.component.html',
   styleUrls: ['./matches.component.css'],
 })
-export class MatchesComponent implements OnInit {
+export class MatchesComponent implements OnInit, OnDestroy {
   matches: any[] = [];
   filteredMatches: any[] = [];
   status: MatchStatus = MatchStatus.All;
   searchTerm: string = '';
+  private intervalId: any;
 
   private apiService = inject(ApiService);
 
@@ -51,12 +52,8 @@ export class MatchesComponent implements OnInit {
     this.getMatches();
   }
 
-
-  private intervalId: any;
-
-
-
   ngOnDestroy() {
     clearInterval(this.intervalId);
   }
+
 }

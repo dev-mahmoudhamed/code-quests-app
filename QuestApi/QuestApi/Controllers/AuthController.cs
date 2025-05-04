@@ -52,14 +52,19 @@ namespace QuestApi.Controllers
 
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"]));
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var token = new JwtSecurityToken(
-                          issuer: _config["Jwt:Issuer"],
-                          audience: _config["Jwt:Audience"],
-                          claims: claims,
-                          expires: DateTime.UtcNow.AddMinutes(60),
-                          signingCredentials: creds);
+            var tokenDescriptor = new SecurityTokenDescriptor
+            {
+                Subject = new ClaimsIdentity(claims),
+                Expires = DateTime.UtcNow.AddHours(2),
+                SigningCredentials = creds,
+                Issuer = _config["Jwt:Issuer"],
+                Audience = _config["Jwt:Audience"]
+            };
 
-            return Ok(new { token = new JwtSecurityTokenHandler().WriteToken(token) });
+            var tokenHandler = new JwtSecurityTokenHandler();
+            var token = tokenHandler.CreateToken(tokenDescriptor);
+            return Ok(new { token = tokenHandler.WriteToken(token) });
+
         }
     }
 

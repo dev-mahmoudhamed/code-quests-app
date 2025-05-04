@@ -64,27 +64,25 @@ var jwt = builder.Configuration.GetSection("Jwt");
 // in produciton environment we keep key scret place Azure Key Vault or Environment Variables.  
 var key = Encoding.UTF8.GetBytes(jwt["Key"]!);
 
-builder.Services
-  .AddAuthentication(options =>
-  {
-      options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-      options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-  })
-  .AddJwtBearer(opts =>
-  {
-      opts.RequireHttpsMetadata = true;
-      opts.SaveToken = true;
-      opts.TokenValidationParameters = new TokenValidationParameters
-      {
-          ValidateIssuerSigningKey = true,
-          IssuerSigningKey = new SymmetricSecurityKey(key),
-          ValidateIssuer = true,
-          ValidIssuer = jwt["Issuer"],
-          ValidateAudience = true,
-          ValidAudience = jwt["Audience"],
-          ValidateLifetime = true
-      };
-  });
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(opts =>
+{
+    opts.RequireHttpsMetadata = true;
+    opts.SaveToken = true;
+    opts.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(key),
+        ValidateIssuer = true,
+        ValidIssuer = jwt["Issuer"],
+        ValidateAudience = true,
+        ValidAudience = jwt["Audience"],
+        ValidateLifetime = true
+    };
+});
 
 builder.Services.AddControllers();
 
