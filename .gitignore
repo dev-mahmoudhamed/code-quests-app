@@ -3,10 +3,14 @@
 **/obj/
 
 # Visual Studio files
-.vs/
+QuestApi/.vs/
+QuestApi/.vs/QuestApi/v17/.suo
+QuestApi/.vs/QuestApi/v17/DocumentLayout.json
+
 *.user
 *.userosscache
 *.sln.docstates
 
 # Node.js dependencies
 **/node_modules/
+
