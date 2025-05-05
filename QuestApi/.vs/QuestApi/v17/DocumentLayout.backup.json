@@ -3,6 +3,17 @@
   "WorkspaceRootPath": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|c:\\users\\devma\\onedrive\\desktop\\code-quests-app\\questapi\\questapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|ViewDataWindow_MSSQL__/./QuestDb/True/SqlTable/dbo.Matches.sql||{0058A1F7-65F3-4DB9-B3D0-CA7E64DD73CD}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|c:\\users\\devma\\onedrive\\desktop\\code-quests-app\\questapi\\questapi\\data\\seeddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\data\\seeddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|c:\\users\\devma\\onedrive\\desktop\\code-quests-app\\questapi\\questapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -27,6 +38,42 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "QuestApi\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "QuestApi\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwDEAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T11:08:57.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SeedDataService.cs",
+              "DocumentMoniker": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Data\\SeedDataService.cs",
+              "RelativeDocumentMoniker": "QuestApi\\Data\\SeedDataService.cs",
+              "ToolTip": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Data\\SeedDataService.cs",
+              "RelativeToolTip": "QuestApi\\Data\\SeedDataService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-05T11:00:23.251Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "dbo.Matches [Data]",
+              "DocumentMoniker": "ViewDataWindow_MSSQL__/./QuestDb/True/SqlTable/dbo.Matches.sql",
+              "ToolTip": "dbo.Matches [Data]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000826|",
+              "WhenOpened": "2025-05-05T10:59:15.422Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\devma\\OneDrive\\Desktop\\code-quests-app\\QuestApi\\QuestApi\\Program.cs",
               "RelativeDocumentMoniker": "QuestApi\\Program.cs",

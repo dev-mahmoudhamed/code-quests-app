@@ -1,19 +1,28 @@
-# Clubber TV Code Quests App
+# Clubber TV App
 
 ## Business Understanding
-The Playlist feature lets Clubber TV users curate and organize their favorite football matches in one place. This makes it easy to quickly access, rewatch, or keep track of matches they care about, increasing engagement and satisfaction with the platform.
+- The Playlist feature lets Clubber TV users curate and organize their favorite football matches in one place.
+- This makes it easy to quickly access live matches or rewatch old ones with just **ONE** click.
+- Users are also able to delete unwanted matches from the list.
 
 ### Feature Suggestion
-A valuable improvement would be to notify users when a match in their playlist goes live, ensuring they never miss the action for matches they are interested in.
+* **Live Match Result Notifications:** While watching a live match, display small, non-intrusive notifications on the screen showing real-time results from other live matches currently in progress.
 
 ---
 
-## Setup Instructions
+## Getting Started
 
 ### Prerequisites
 - [.NET 8 SDK](https://dotnet.microsoft.com/download)
 - [Node.js & npm](https://nodejs.org/)
 - [SQL Server](https://www.microsoft.com/en-us/sql-server/sql-server-downloads)
+- [Angular 19](https://angular.dev/installation)
+
+### Clone the Repository
+Clone the project using:
+```bash
+git clone https://github.com/dev-mahmoudhamed/code-quests-app
+```
 
 ### Backend Setup (QuestApi)
 1. Navigate to `QuestApi/` directory.
@@ -54,7 +63,6 @@ A valuable improvement would be to notify users when a match in their playlist g
 - `GET /api/playlist` — Get user's playlist
 - `POST /api/playlist/{matchId}` — Add match to playlist
 - `DELETE /api/playlist/{matchId}` — Remove match from playlist
-- `GET /api/playlist/myListIds` — Get IDs of matches in user's playlist
 
 > All endpoints except login/register require JWT authentication.
 
@@ -92,20 +100,8 @@ code-quests-app/
 - Register a new account or log in.
 - Browse matches, search by competition, and filter by status (All, Live, Replay).
 - Add matches to your playlist. View and manage your playlist from the Playlist page.
+- Remove matches from your playlist with a single click.
 - Click "Watch Match" to open a match video (demo link).
-
----
-
-## Testing
-- **Backend:** Use Postman or Swagger UI (`/swagger`) for API testing.
-- **Frontend:**
-  - Unit tests: `ng test`
-  - E2E tests: `ng e2e`
-
----
-
-## Contributing
-Pull requests are welcome! Please open an issue first to discuss changes.
 
 ---
 
