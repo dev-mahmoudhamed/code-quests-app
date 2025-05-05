@@ -1,6 +1,5 @@
 <div class="container py-4">
 
-    <!-- Header -->
     <div class="d-flex align-items-baseline mb-4">
         <h2 class="mb-0">My Playlist</h2>
         <small class="text-muted ms-2">
@@ -9,7 +8,6 @@
     </div>
 
     <ng-container *ngIf="playlist?.length; else emptyState">
-
         <div class="row g-3 ">
             <div class="col-12 col-sm-6 col-lg-4" *ngFor="let match of playlist">
                 <app-match-card (removeMatchEvent)="loadPlaylist()" [isPlaylistPage]="true" [match]="{
@@ -21,7 +19,6 @@
                   }"></app-match-card>
             </div>
         </div>
-
     </ng-container>
 
     <ng-template #emptyState>

@@ -30,7 +30,7 @@ namespace QuestApi.Data
             var matches = new List<Match>
         {
             new() { Title = "Arsenal vs Man City", Competition = "Premier League",
-                   Date = DateTime.UtcNow.AddHours(-2), Status = MatchStatus.Replay },
+                   Date = DateTime.UtcNow.AddDays(-2), Status = MatchStatus.Replay },
             new() { Title = "Real Madrid vs Dortmund", Competition = "Champions League",
                    Date = DateTime.UtcNow.AddDays(-7), Status = MatchStatus.Replay },
             new() { Title = "Argentina vs France", Competition = "FIFA World Cup",
@@ -48,7 +48,7 @@ namespace QuestApi.Data
             new() { Title = "Brazil vs Argentina", Competition = "Copa America",
                    Date = DateTime.UtcNow, Status = MatchStatus.Live },
             new() { Title = "Leeds vs Southampton", Competition = "EFL Championship",
-                   Date = DateTime.UtcNow.AddHours(-5), Status = MatchStatus.Replay }
+                   Date = DateTime.UtcNow.AddDays(-5), Status = MatchStatus.Replay }
         };
 
             await context.Matches.AddRangeAsync(matches);

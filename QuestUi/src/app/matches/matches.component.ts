@@ -16,13 +16,13 @@ import { MatchStatus } from '../Models/match';
   styleUrls: ['./matches.component.css'],
 })
 export class MatchesComponent implements OnInit, OnDestroy {
+  private apiService = inject(ApiService);
+
   matches: any[] = [];
   filteredMatches: any[] = [];
   status: MatchStatus = MatchStatus.All;
   searchTerm: string = '';
-  private intervalId: any;
-
-  private apiService = inject(ApiService);
+  intervalId: any;
 
   ngOnInit() {
     this.getMatches();

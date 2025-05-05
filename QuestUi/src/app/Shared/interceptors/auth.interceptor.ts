@@ -9,10 +9,9 @@ export const authInterceptor: HttpInterceptorFn = (req, next) => {
     const token = authService.getToken();
 
     if (token) {
-        // Check if token is expired
         const tokenExpiration = authService.getTokenExpiration();
-        if (tokenExpiration && new Date() > tokenExpiration) {
-            authService.logout(); // Clear the expired token
+        if (tokenExpiration && (new Date() > tokenExpiration)) {
+            authService.logout();
             return throwError(() => new HttpErrorResponse({
                 error: 'Token expired',
                 status: 401

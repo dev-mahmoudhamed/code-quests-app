@@ -40,14 +40,13 @@ export class AuthService {
         this.isLoggedInSubject.next(this.isAuthenticated());
         this.currentUserSubject.next(null);
         window.location.reload();
-        //   this.router.navigate(['/test']);
     }
 
-    get currentUserId(): number | null {
+    get currentUser(): any {
         const token = this.getToken();
         if (!token) return null;
-        const payload = this.decodeToken(token);
-        return payload?.userId || null;
+        const userPaylod = this.decodeToken(token);
+        return userPaylod;
     }
 
     isAuthenticated(): boolean {

@@ -16,6 +16,7 @@ import { AuthService } from '../../Shared/Services/auth.service';
   styleUrls: ['./login.component.css'],
 
 })
+
 export class LoginComponent {
   private fb = inject(FormBuilder);
   private auth = inject(AuthService);
@@ -36,10 +37,6 @@ export class LoginComponent {
       },
       error: (err) => {
         console.error('Login failed:', err);
-        // this.snackBar.open(`Login failed: ${err.message}`, 'Close', {
-        //   duration: 5000,
-        //   panelClass: ['error-snackbar']
-        // });
       }
     });
   }

@@ -14,11 +14,12 @@ export class NavBarComponent implements OnInit {
   private router = inject(Router);
   private authService = inject(AuthService);
 
+  userName!: string;
   constructor() {
   }
 
   ngOnInit(): void {
-
+    this.userName = (this.authService.currentUser?.name.toString()).split(' ')[0];
   }
 
   isLoggedIn$ = this.authService.isLoggedIn$;
