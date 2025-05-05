@@ -10,6 +10,7 @@ import { LoginDto } from '../../Models/loginDto';
 export class AuthService {
     private authTokenKey = 'auth_token';
     private currentUserSubject = new BehaviorSubject<any>(null);
+    currentUser$ = this.currentUserSubject.asObservable();
 
     private isLoggedInSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
     isLoggedIn$ = this.isLoggedInSubject.asObservable();
@@ -40,13 +41,6 @@ export class AuthService {
         this.isLoggedInSubject.next(this.isAuthenticated());
         this.currentUserSubject.next(null);
         window.location.reload();
-    }
-
-    get currentUser(): any {
-        const token = this.getToken();
-        if (!token) return null;
-        const userPaylod = this.decodeToken(token);
-        return userPaylod;
     }
 
     isAuthenticated(): boolean {

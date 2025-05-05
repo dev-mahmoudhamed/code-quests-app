@@ -1,7 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject, OnInit } from '@angular/core';
+import { Component, inject, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 import { AuthService } from '../Shared/Services/auth.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-nav-bar',
@@ -10,16 +11,17 @@ import { AuthService } from '../Shared/Services/auth.service';
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.css'
 })
-export class NavBarComponent implements OnInit {
+export class NavBarComponent implements OnInit, OnDestroy {
   private router = inject(Router);
   private authService = inject(AuthService);
 
-  userName!: string;
-  constructor() {
-  }
+  userName: string = '';
+  private userSub?: Subscription;
 
   ngOnInit(): void {
-    this.userName = (this.authService.currentUser?.name.toString()).split(' ')[0];
+    this.userSub = this.authService.currentUser$.subscribe(user => {
+      this.userName = user?.name?.split(' ')[0] || '';
+    });
   }
 
   isLoggedIn$ = this.authService.isLoggedIn$;
@@ -27,5 +29,9 @@ export class NavBarComponent implements OnInit {
   logout() {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  ngOnDestroy(): void {
+    this.userSub?.unsubscribe();
   }
 }

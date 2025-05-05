@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
 import { Router, RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { RegisterDto } from '../../Models/registerDto';
@@ -26,7 +26,11 @@ export class RegisterComponent {
   registerForm = this.fb.nonNullable.group({
     fullName: ['', [Validators.required, Validators.minLength(2)]],
     email: ['', [Validators.required, Validators.email]],
-    password: ['', [Validators.required, Validators.minLength(6)]],
+    password: ['', [
+      Validators.required,
+      Validators.minLength(6),
+      this.passwordComplexityValidator
+    ]],
     confirmPassword: ['', Validators.required]
   }, {
     validators: this.passwordMatchValidator
@@ -38,6 +42,18 @@ export class RegisterComponent {
       : { passwordMismatch: true };
   }
 
+  private passwordComplexityValidator(control: any) {
+    const value = control.value || '';
+    const hasUpperCase = /[A-Z]/.test(value);
+    const hasLowerCase = /[a-z]/.test(value);
+    const hasNumber = /[0-9]/.test(value);
+    const hasSpecial = /[^A-Za-z0-9]/.test(value);
+    if (hasUpperCase && hasLowerCase && hasNumber && hasSpecial) {
+      return null;
+    }
+    return { passwordComplexity: true };
+  }
+
   onSubmit() {
     if (this.registerForm.invalid) return;
 
@@ -45,14 +61,10 @@ export class RegisterComponent {
 
     this.auth.register(registerDto).subscribe({
       next: () => {
-        // this.snackBar.open('Registration successful!', 'Close', { duration: 3000 });
         this.router.navigate(['/']);
       },
       error: (error) => {
-        // this.snackBar.open(`Registration failed: ${error.message}`, 'Close', {
-        //   duration: 5000,
-        //   panelClass: ['error-snackbar']
-        // });
+        console.log(error);
       }
     });
   }

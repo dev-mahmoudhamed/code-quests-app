@@ -34,6 +34,9 @@
                 <div *ngIf="registerForm.get('password')!.errors?.['required']">Password is required</div>
                 <div *ngIf="registerForm.get('password')!.errors?.['minlength']">Password must be at least 6 characters
                 </div>
+                <div *ngIf="registerForm.get('password')!.errors?.['passwordComplexity']">
+                    Password must contain uppercase, lowercase, number, and special character
+                </div>
             </div>
         </div>
 
