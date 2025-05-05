@@ -69,7 +69,7 @@ namespace QuestApi.Controllers
             {
                 var userId = (await GetCurrentUser()).Id;
 
-                var playlistItem = _DbContext.Playlists.FirstOrDefault(p => p.UserId == userId && p.MatchId == matchId);
+                var playlistItem = new Playlist { UserId = userId, MatchId = matchId };
                 if (playlistItem != null)
                 {
                     _DbContext.Playlists.Remove(playlistItem);
@@ -92,17 +92,6 @@ namespace QuestApi.Controllers
             
         }
 
-        [HttpGet("myListIds")]
-        public async Task<List<int>> GetMyPlayListIds()
-        {
-            var userId = (await GetCurrentUser()).Id;
-            var playListIds = await _DbContext.Playlists
-                .Where(p => p.UserId == userId)
-                .Select(p => p.MatchId)
-                .ToListAsync();
-
-            return playListIds;
-        }
         private async Task<AppUser> GetCurrentUser()
         {
             var userId = User.FindFirstValue(ClaimTypes.NameIdentifier)

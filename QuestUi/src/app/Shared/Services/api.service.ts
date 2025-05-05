@@ -27,7 +27,7 @@ export class ApiService {
     return this.http.delete(`${environment.apiUrl}/Playlist/${matchId}`, {});
   }
 
-  GetMyPlayListIds() {
+  getMyPlayListIds() {
     return this.http.get<number[]>(`${environment.apiUrl}/myListIds`);
   }
 

@@ -1,11 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using QuestApi.Data;
 using QuestApi.Models;
-using System.Security.Claims;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace QuestApi.Controllers
 {
@@ -15,12 +12,10 @@ namespace QuestApi.Controllers
     public class MatchesController : ControllerBase
     {
         private readonly QuestDbContext _DbContext;
-        private readonly UserManager<AppUser> _userManager;
 
-        public MatchesController(QuestDbContext dbContext, UserManager<AppUser> userManager)
+        public MatchesController(QuestDbContext dbContext)
         {
             _DbContext = dbContext;
-            _userManager = userManager;
         }
 
         [HttpGet]
