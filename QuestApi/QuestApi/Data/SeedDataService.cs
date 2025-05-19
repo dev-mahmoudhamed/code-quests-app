@@ -25,6 +25,9 @@ namespace QuestApi.Data
             }
         }
 
+        public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
+
+
         private static async Task SeedMatchesAsync(QuestDbContext context)
         {
             var matches = new List<Match>
@@ -55,6 +58,5 @@ namespace QuestApi.Data
             await context.SaveChangesAsync();
         }
 
-        public Task StopAsync(CancellationToken cancellationToken) => Task.CompletedTask;
     }
 }

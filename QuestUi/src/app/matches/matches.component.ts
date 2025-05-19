@@ -27,6 +27,7 @@ export class MatchesComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.getMatches();
 
+    // auto-refresh every 45 secondss
     this.intervalId = setInterval(() => {
       this.getMatches();
     }, 45 * 1000);
