@@ -4,6 +4,9 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
+		<UserSecretsId>9e36d248-861b-4922-b8b4-76b128f8cd4b</UserSecretsId>
+		<DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+		<DockerComposeProjectPath>..\docker-compose.dcproj</DockerComposeProjectPath>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -19,6 +22,8 @@
 			<IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
 		</PackageReference>
 		<PackageReference Include="Microsoft.Extensions.Identity.Core" Version="8.0.15" />
+		<PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+		<PackageReference Include="StackExchange.Redis" Version="2.9.11" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
 	</ItemGroup>
 

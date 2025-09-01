@@ -5,6 +5,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using QuestApi.Data;
 using QuestApi.Models;
+using StackExchange.Redis;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -43,8 +44,12 @@ builder.Services.AddSwaggerGen(c =>
     });
 });
 
+
 builder.Services.AddDbContext<QuestDbContext>(opts =>
-    opts.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+    opts.UseSqlServer(builder.Configuration.GetConnectionString("SqlServer")));
+
+builder.Services.AddSingleton<IConnectionMultiplexer>(_ =>
+    ConnectionMultiplexer.Connect(builder.Configuration.GetConnectionString("Redis")!));
 
 builder.Services.AddIdentity<AppUser, IdentityRole<int>>()
     .AddEntityFrameworkStores<QuestDbContext>();

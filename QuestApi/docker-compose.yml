@@ -1,0 +1,6 @@
+services:
+  questapi:
+    image: ${DOCKER_REGISTRY-}questapi
+    build:
+      context: .
+      dockerfile: QuestApi/Dockerfile

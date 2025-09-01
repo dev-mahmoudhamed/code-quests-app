@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  questapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - ASPNETCORE_HTTPS_PORTS=8081
+      - ConnectionStrings__SqlServer=Server=sqlserver,1433;Database=QuestDb;User Id=sa;Password=Password@123;TrustServerCertificate=True;
+      - ConnectionStrings__Redis=redis:6379
+    ports:
+      - "5000:8080"
+      - "5001:8081"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+    depends_on:
+      - sqlserver
+      - redis
+
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Password@123
+    ports:
+      - "1433:1433"
+    volumes:
+      - sql_data:/var/opt/mssql
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+volumes:
+  sql_data:
+  redis_data:

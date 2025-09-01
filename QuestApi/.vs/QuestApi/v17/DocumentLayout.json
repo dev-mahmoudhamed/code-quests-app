@@ -3,28 +3,12 @@
   "WorkspaceRootPath": "D:\\Projects\\code-quests-app\\QuestApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\data\\questdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\data\\questdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\data\\seeddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\data\\seeddataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\rediscachecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\rediscachecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Bookmark",
@@ -45,76 +29,89 @@
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{fbcae063-e2c0-4ab1-a516-996ea3dafb72}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:134:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:136:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:137:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:138:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:139:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 0,
               "Title": "PlaylistController.cs",
               "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\PlaylistController.cs",
               "RelativeDocumentMoniker": "QuestApi\\Controllers\\PlaylistController.cs",
               "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\PlaylistController.cs",
               "RelativeToolTip": "QuestApi\\Controllers\\PlaylistController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAF0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAA+wCAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T18:10:16.825Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "MatchesController.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\MatchesController.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Controllers\\MatchesController.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\MatchesController.cs",
-              "RelativeToolTip": "QuestApi\\Controllers\\MatchesController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T18:09:26.959Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "QuestDbContext.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Data\\QuestDbContext.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Data\\QuestDbContext.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Data\\QuestDbContext.cs",
-              "RelativeToolTip": "QuestApi\\Data\\QuestDbContext.cs",
-              "ViewState": "AgIAAAoAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T18:03:19.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "SeedDataService.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Data\\SeedDataService.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Data\\SeedDataService.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Data\\SeedDataService.cs",
-              "RelativeToolTip": "QuestApi\\Data\\SeedDataService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-18T17:56:34.788Z"
+              "WhenOpened": "2025-09-01T13:08:56.905Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\appsettings.json",
-              "RelativeDocumentMoniker": "QuestApi\\appsettings.json",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\appsettings.json",
-              "RelativeToolTip": "QuestApi\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-05-18T17:56:18.787Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Program.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Program.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Program.cs",
-              "RelativeToolTip": "QuestApi\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEMAAABMAAAAAAAAAA==",
+              "Title": "RedisCacheController.cs",
+              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\RedisCacheController.cs",
+              "RelativeDocumentMoniker": "QuestApi\\Controllers\\RedisCacheController.cs",
+              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\RedisCacheController.cs",
+              "RelativeToolTip": "QuestApi\\Controllers\\RedisCacheController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-05-05T12:18:37.972Z",
+              "WhenOpened": "2025-09-01T13:00:57.276Z",
               "EditorCaption": ""
             }
           ]
