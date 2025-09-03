@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { BehaviorSubject, tap } from 'rxjs';
 import { RegisterDto } from '../../Models/registerDto';
-import { environment } from '../../../environments/environment.development';
+import { environment } from '../../../environments/environment';
 import { LoginDto } from '../../Models/loginDto';
 
 @Injectable({ providedIn: 'root' })

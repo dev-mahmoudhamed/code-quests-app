@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option csharp_namespace = "TicketReservationGrpc";
+
+service Ticket {
+  rpc GetTicket (TicketRequest) returns (TicketReply);
+}
+
+message TicketRequest {
+  int32 userId = 1 ;
+  string cardNumber = 2;
+}
+
+message TicketReply {
+  bool status = 1;
+  string ticketNumber = 2;
+}

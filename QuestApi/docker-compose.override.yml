@@ -8,6 +8,8 @@ services:
       - ASPNETCORE_HTTPS_PORTS=8081
       - ConnectionStrings__SqlServer=Server=sqlserver,1433;Database=QuestDb;User Id=sa;Password=Password@123;TrustServerCertificate=True;
       - ConnectionStrings__Redis=redis:6379
+      - GrpcSettings__TicketService=http://ticketreservationservice:7070
+
     ports:
       - "5000:8080"
       - "5001:8081"
@@ -17,6 +19,20 @@ services:
     depends_on:
       - sqlserver
       - redis
+      - ticketreservationservice
+
+  ticketreservationservice:
+    environment:
+      - DOTNET_DEV_CERTS=true
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=7070
+      - ASPNETCORE_HTTPS_PORTS=7071
+    build:
+      context: .
+      dockerfile: TicketReservationService/Dockerfile
+    ports:
+      - "7070:7070"
+      - "7071:7071"
 
   sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest

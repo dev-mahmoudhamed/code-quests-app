@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "D:\\Projects\\code-quests-app\\QuestApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\rediscachecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\rediscachecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -91,27 +87,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PlaylistController.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\PlaylistController.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Controllers\\PlaylistController.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\PlaylistController.cs",
-              "RelativeToolTip": "QuestApi\\Controllers\\PlaylistController.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAA+wCAAAAAMAAAAAAAAAA==",
+              "Title": "TicketController.cs",
+              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\TicketController.cs",
+              "RelativeDocumentMoniker": "QuestApi\\Controllers\\TicketController.cs",
+              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\TicketController.cs",
+              "RelativeToolTip": "QuestApi\\Controllers\\TicketController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T13:08:56.905Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RedisCacheController.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\RedisCacheController.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Controllers\\RedisCacheController.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\RedisCacheController.cs",
-              "RelativeToolTip": "QuestApi\\Controllers\\RedisCacheController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAA6AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-01T13:00:57.276Z",
+              "WhenOpened": "2025-09-03T11:25:20.587Z",
+              "IsPinned": true,
               "EditorCaption": ""
             }
           ]

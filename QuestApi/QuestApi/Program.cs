@@ -7,12 +7,16 @@ using QuestApi.Data;
 using QuestApi.Models;
 using StackExchange.Redis;
 using System.Text;
+using Grpc.Net.Client;
+using TicketReservationGrpc;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddHostedService<SeedDataService>();
+
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Quest API", Version = "v1" });
