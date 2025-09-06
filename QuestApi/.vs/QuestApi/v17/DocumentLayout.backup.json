@@ -3,16 +3,12 @@
   "WorkspaceRootPath": "D:\\Projects\\code-quests-app\\QuestApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{838D32B9-441E-4113-92E6-184C81C37214}|TicketReservationService\\TicketReservationService.csproj|d:\\projects\\code-quests-app\\questapi\\ticketreservationservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{838D32B9-441E-4113-92E6-184C81C37214}|TicketReservationService\\TicketReservationService.csproj|solutionrelative:ticketreservationservice\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|d:\\projects\\code-quests-app\\questapi\\docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{81DDED9D-158B-E303-5F62-77A2896D2A5A}|docker-compose.dcproj|solutionrelative:docker-compose.override.yml||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\ticketcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,19 +18,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "TicketController.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\TicketController.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Controllers\\TicketController.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\TicketController.cs",
-              "RelativeToolTip": "QuestApi\\Controllers\\TicketController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAA3AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T11:25:20.587Z",
+              "DocumentIndex": 0,
+              "Title": "docker-compose.override.yml",
+              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\docker-compose.override.yml",
+              "RelativeDocumentMoniker": "docker-compose.override.yml",
+              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\docker-compose.override.yml",
+              "RelativeToolTip": "docker-compose.override.yml",
+              "ViewState": "AgIAADoAAAAAAAAAAAAAAFAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
+              "WhenOpened": "2025-09-06T09:31:42.074Z",
               "IsPinned": true,
               "EditorCaption": ""
             },
@@ -108,28 +104,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\TicketReservationService\\Program.cs",
-              "RelativeDocumentMoniker": "TicketReservationService\\Program.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\TicketReservationService\\Program.cs",
-              "RelativeToolTip": "TicketReservationService\\Program.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAYAAAAFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-03T11:55:26.881Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "docker-compose.override.yml",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\docker-compose.override.yml",
-              "RelativeDocumentMoniker": "docker-compose.override.yml",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\docker-compose.override.yml",
-              "RelativeToolTip": "docker-compose.override.yml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003775|",
-              "WhenOpened": "2025-09-03T11:47:50.93Z",
+              "Title": "MatchesController.cs",
+              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\MatchesController.cs",
+              "RelativeDocumentMoniker": "QuestApi\\Controllers\\MatchesController.cs",
+              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\MatchesController.cs",
+              "RelativeToolTip": "QuestApi\\Controllers\\MatchesController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAiwB8AAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-06T09:30:58.367Z",
               "EditorCaption": ""
             }
           ]

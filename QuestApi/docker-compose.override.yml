@@ -3,6 +3,9 @@ version: '3.9'
 services:
   questapi:
     environment:
+      - RabbitMQ__Host=rabbitmq
+      - RabbitMQ__Username=user
+      - RabbitMQ__Password=password
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
       - ASPNETCORE_HTTPS_PORTS=8081
@@ -20,6 +23,7 @@ services:
       - sqlserver
       - redis
       - ticketreservationservice
+      - rabbitmq
 
   ticketreservationservice:
     environment:
@@ -51,6 +55,27 @@ services:
     volumes:
       - redis_data:/data
 
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: unless-stopped
+    ports:
+      - "5672:5672"     # AMQP
+      - "15672:15672"   # Management UI
+    environment:
+      RABBITMQ_DEFAULT_USER: user
+      RABBITMQ_DEFAULT_PASS: password
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+      - rabbitmq-logs:/var/log/rabbitmq
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
 volumes:
   sql_data:
   redis_data:
+  rabbitmq-data:
+  rabbitmq-logs:
