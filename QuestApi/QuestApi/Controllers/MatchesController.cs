@@ -27,9 +27,9 @@ namespace QuestApi.Controllers
         [HttpGet]
         public async Task<List<Match>> GetMatchesAsync(MatchStatus status, string? filter)
         {
-            await ProduceMsgAsync(status, filter);
+           // await ProduceMsgAsync(status, filter);
             IQueryable<Match> query = _DbContext.Matches;
-            var input = await ReceiveMsgAsync();
+           // var input = await ReceiveMsgAsync();
 
             if (status != MatchStatus.All)
                 query = query.Where(m => m.Status == status);
@@ -79,13 +79,12 @@ namespace QuestApi.Controllers
             await channel.QueueDeclareAsync(queue: "matchFilter", durable: false, exclusive: false, autoDelete: false, arguments: null);
 
             var consumer = new AsyncEventingBasicConsumer(channel);
-            consumer.ReceivedAsync += (model, ea) =>
+            consumer.ReceivedAsync += async (model, ea) =>
             {
                 var body = ea.Body.ToArray();
                 var json = Encoding.UTF8.GetString(body);
                 var messageObj = JsonSerializer.Deserialize<MatchFilterInput>(json);
                 input = messageObj;
-                return Task.CompletedTask;
             };
             await channel.BasicConsumeAsync(queue: "matchFilter", autoAck: true, consumer: consumer);
             return input;

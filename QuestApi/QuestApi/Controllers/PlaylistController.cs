@@ -20,7 +20,7 @@ namespace QuestApi.Controllers
         private readonly UserManager<AppUser> _userManager;
         private readonly IDatabase _redisDb;
 
-        public PlaylistController(QuestDbContext db, UserManager<AppUser> userManager, IConnectionMultiplexer redis)
+        public PlaylistController(QuestDbContext db, UserManager<AppUser> userManager, IConnectionMultiplexer redis = null)
         {
             _redisDb = redis.GetDatabase();
             _DbContext = db;

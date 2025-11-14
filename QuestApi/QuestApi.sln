@@ -9,6 +9,8 @@ Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TicketReservationService", "TicketReservationService\TicketReservationService.csproj", "{838D32B9-441E-4113-92E6-184C81C37214}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QuestApi_Test", "..\QuestApi_Test\QuestApi_Test.csproj", "{F06A602A-57DB-4ACC-A862-0DF61BC43BB6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{838D32B9-441E-4113-92E6-184C81C37214}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{838D32B9-441E-4113-92E6-184C81C37214}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{838D32B9-441E-4113-92E6-184C81C37214}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F06A602A-57DB-4ACC-A862-0DF61BC43BB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F06A602A-57DB-4ACC-A862-0DF61BC43BB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F06A602A-57DB-4ACC-A862-0DF61BC43BB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F06A602A-57DB-4ACC-A862-0DF61BC43BB6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
