@@ -1,23 +1,22 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
-import { BehaviorSubject, tap } from 'rxjs';
+import { tap } from 'rxjs';
 import { RegisterDto } from '../../Models/registerDto';
 import { environment } from '../../../environments/environment';
 import { LoginDto } from '../../Models/loginDto';
+import { Store } from '@ngrx/store';
+import * as AuthActions from '../../Store/auth.actions';
 
 @Injectable({ providedIn: 'root' })
 export class AuthService {
     private authTokenKey = 'auth_token';
-    private currentUserSubject = new BehaviorSubject<any>(null);
-    currentUser$ = this.currentUserSubject.asObservable();
-
-    private isLoggedInSubject = new BehaviorSubject<boolean>(this.isAuthenticated());
-    isLoggedIn$ = this.isLoggedInSubject.asObservable();
+    // Store is used for application-wide auth state
 
     constructor(
         private http: HttpClient,
-        private router: Router) {
+        private router: Router,
+        private store: Store<any>) {
     }
 
     register(registerDto: RegisterDto) {
@@ -29,8 +28,9 @@ export class AuthService {
             .pipe(
                 tap(response => {
                     this.storeToken(response.token);
-                    this.currentUserSubject.next(this.decodeToken(response.token));
-                    this.isLoggedInSubject.next(this.isAuthenticated());
+                    const user = this.decodeToken(response.token);
+                    // dispatch login success to store
+                    this.store.dispatch(AuthActions.loginSuccess({ user, token: response.token }));
                     this.router.navigate(['/matches']);
                 })
             );
@@ -38,8 +38,7 @@ export class AuthService {
 
     logout() {
         localStorage.removeItem(this.authTokenKey);
-        this.isLoggedInSubject.next(this.isAuthenticated());
-        this.currentUserSubject.next(null);
+        this.store.dispatch(AuthActions.logout());
         window.location.reload();
     }
 
