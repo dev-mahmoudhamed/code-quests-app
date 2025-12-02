@@ -11,7 +11,6 @@ import * as AuthActions from '../../Store/auth.actions';
 @Injectable({ providedIn: 'root' })
 export class AuthService {
     private authTokenKey = 'auth_token';
-    // Store is used for application-wide auth state
 
     constructor(
         private http: HttpClient,
@@ -30,6 +29,18 @@ export class AuthService {
                     this.storeToken(response.token);
                     const user = this.decodeToken(response.token);
                     // dispatch login success to store
+                    this.store.dispatch(AuthActions.loginSuccess({ user, token: response.token }));
+                    this.router.navigate(['/matches']);
+                })
+            );
+    }
+
+    googleLogin(idToken: string) {
+        return this.http.post<{ token: string }>(`${environment.apiUrl}/auth/google-login`, { idToken })
+            .pipe(
+                tap(response => {
+                    this.storeToken(response.token);
+                    const user = this.decodeToken(response.token);
                     this.store.dispatch(AuthActions.loginSuccess({ user, token: response.token }));
                     this.router.navigate(['/matches']);
                 })

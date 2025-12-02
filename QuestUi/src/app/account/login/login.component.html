@@ -29,6 +29,11 @@
         <button type="submit" class="btn btn-dark" [disabled]="loginForm.invalid">
             Login
         </button>
+
+        <div class="mt-3">
+            <span>Or login with Google:</span>
+            <asl-google-signin-button type='standard' size='large'></asl-google-signin-button>
+        </div>
     </form>
 
     <div class="mt-3">

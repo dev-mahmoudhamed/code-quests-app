@@ -44,6 +44,51 @@ namespace QuestApi.Controllers
             if (user == null || !await _userMgr.CheckPasswordAsync(user, dto.Password))
                 return Unauthorized();
 
+            var token = GenerateJwtToken(user);
+            return Ok(new { token });
+        }
+
+        [HttpPost("google-login"), AllowAnonymous]
+        public async Task<IActionResult> GoogleLogin([FromBody] GoogleLoginDto dto)
+        {
+            try
+            {
+                var settings = new Google.Apis.Auth.GoogleJsonWebSignature.ValidationSettings()
+                {
+                    Audience = new List<string> { _config["Authentication:Google:ClientId"] }
+                };
+
+                var payload = await Google.Apis.Auth.GoogleJsonWebSignature.ValidateAsync(dto.IdToken, settings);
+
+                var user = await _userMgr.FindByEmailAsync(payload.Email);
+                if (user == null)
+                {
+                    user = new AppUser
+                    {
+                        Email = payload.Email,
+                        UserName = payload.Email,
+                        FullName = payload.Name
+                    };
+
+                    var result = await _userMgr.CreateAsync(user);
+                    if (!result.Succeeded) return BadRequest(result.Errors);
+                }
+
+                var token = GenerateJwtToken(user);
+                return Ok(new { token });
+            }
+            catch (Google.Apis.Auth.InvalidJwtException)
+            {
+                return Unauthorized("Invalid Google Token");
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        private string GenerateJwtToken(AppUser user)
+        {
             var claims = new[]
             {
                 new Claim(JwtRegisteredClaimNames.Sub, user.Id.ToString()),
@@ -63,9 +108,7 @@ namespace QuestApi.Controllers
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var token = tokenHandler.CreateToken(tokenDescriptor);
-            return Ok(new { token = tokenHandler.WriteToken(token) });
-
+            return tokenHandler.WriteToken(tokenHandler.CreateToken(tokenDescriptor));
         }
     }
 
