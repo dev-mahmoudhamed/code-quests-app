@@ -2,6 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Match } from '../../Models/match';
 import { environment } from '../../../environments/environment';
+import { Observable } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class ApiService {
@@ -27,4 +28,19 @@ export class ApiService {
     return this.http.delete(`${environment.apiUrl}/Playlist/${matchId}`, {});
   }
 
+  getPublicData(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/Users/public`);
+  }
+
+  getProtectedData(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/Users/protected`);
+  }
+
+  getAdminData(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/Users/admin`);
+  }
+
+  getUserInfo(): Observable<any> {
+    return this.http.get(`${environment.apiUrl}/Users/userinfo`);
+  }
 }

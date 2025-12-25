@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "D:\\Projects\\code-quests-app\\QuestApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\matchescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\userclaim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\userclaim.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\controllers\\playlistcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|d:\\projects\\code-quests-app\\questapi\\questapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F6D19843-8E69-4D39-91F8-0CD9FD85E0F6}|QuestApi\\QuestApi.csproj|solutionrelative:questapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -99,51 +95,41 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MatchesController.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\MatchesController.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Controllers\\MatchesController.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\MatchesController.cs",
-              "RelativeToolTip": "QuestApi\\Controllers\\MatchesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-14T12:51:37.421Z",
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\appsettings.json",
+              "RelativeDocumentMoniker": "QuestApi\\appsettings.json",
+              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\appsettings.json",
+              "RelativeToolTip": "QuestApi\\appsettings.json",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-12-23T18:21:45.813Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "QuestApi\\Properties\\launchSettings.json",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Properties\\launchSettings.json",
-              "RelativeToolTip": "QuestApi\\Properties\\launchSettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-10-05T12:52:34.942Z"
+              "Title": "UserClaim.cs",
+              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\UserClaim.cs",
+              "RelativeDocumentMoniker": "QuestApi\\Controllers\\UserClaim.cs",
+              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\UserClaim.cs",
+              "RelativeToolTip": "QuestApi\\Controllers\\UserClaim.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAYwAYAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-23T18:10:43.718Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Dockerfile",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Dockerfile",
-              "RelativeDocumentMoniker": "QuestApi\\Dockerfile",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Dockerfile",
-              "RelativeToolTip": "QuestApi\\Dockerfile",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-10-05T12:44:14.874Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "PlaylistController.cs",
-              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\PlaylistController.cs",
-              "RelativeDocumentMoniker": "QuestApi\\Controllers\\PlaylistController.cs",
-              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Controllers\\PlaylistController.cs",
-              "RelativeToolTip": "QuestApi\\Controllers\\PlaylistController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAA0AAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Program.cs",
+              "RelativeDocumentMoniker": "QuestApi\\Program.cs",
+              "ToolTip": "D:\\Projects\\code-quests-app\\QuestApi\\QuestApi\\Program.cs",
+              "RelativeToolTip": "QuestApi\\Program.cs",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAAAG0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-22T08:53:49.552Z"
+              "WhenOpened": "2025-12-23T18:01:35.914Z",
+              "EditorCaption": ""
             }
           ]
         }

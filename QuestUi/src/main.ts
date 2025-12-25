@@ -1,29 +1,50 @@
 // main.ts
 import { bootstrapApplication } from '@angular/platform-browser';
 import { AppComponent } from './app/app.component';
-import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { provideHttpClient, withInterceptors, withInterceptorsFromDi, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideToastr } from 'ngx-toastr';
 import { provideStore } from '@ngrx/store';
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
-import {
-  SocialAuthServiceConfig,
-  GoogleLoginProvider,
-} from '@abacritt/angularx-social-login';
+import { GoogleLoginProvider, } from '@abacritt/angularx-social-login';
 
 import { routes } from './app/app.routes';
 import { authInterceptor } from './app/Shared/interceptors/auth.interceptor';
 import { authReducer } from './app/Store/auth.reducer';
 
-// 1️⃣ Define all global providers in a single ApplicationConfig
+////////////////
+
+import {
+  provideKeycloak,
+  includeBearerTokenInterceptor
+} from 'keycloak-angular';
+
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideHttpClient(withInterceptors([authInterceptor])),
     provideAnimations(),
     provideToastr(),
+
+
+    provideKeycloak({
+      config: {
+        url: 'http://localhost:9090',
+        realm: 'CodeQuest',
+        clientId: 'angular-app'
+      },
+      initOptions: {
+        onLoad: 'check-sso',
+        silentCheckSsoRedirectUri: window.location.origin + '/assets/silent-check-sso.html'
+      },
+      // Optional: Enable auto-refreshing of tokens
+      features: [
+        // withAutoRefreshToken() 
+      ]
+    }),
+
+    provideHttpClient(withInterceptors([authInterceptor])),
     provideStore({ auth: authReducer }),
     {
       provide: 'SocialAuthServiceConfig',

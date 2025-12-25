@@ -21,7 +21,7 @@ COPY ["TicketReservationService/TicketReservationService.csproj", "TicketReserva
 COPY ["QuestApi/QuestApi.csproj", "QuestApi/"]
 
 # Restore using solution (ensures all references resolve)
-RUN dotnet restore "QuestApi.sln"
+RUN dotnet restore "QuestApi/QuestApi.csproj"
 
 
 

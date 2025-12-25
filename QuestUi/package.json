@@ -25,6 +25,8 @@
     "@ngrx/store-devtools": "^19.2.1",
     "bootstrap": "^5.3.5",
     "google-one-tap": "^1.0.6",
+    "keycloak-angular": "^19.0.2",
+    "keycloak-js": "^26.2.2",
     "ngx-toastr": "^19.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

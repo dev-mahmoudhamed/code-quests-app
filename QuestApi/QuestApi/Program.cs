@@ -7,8 +7,6 @@ using QuestApi.Data;
 using QuestApi.Models;
 using StackExchange.Redis;
 using System.Text;
-using Grpc.Net.Client;
-using TicketReservationGrpc;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -60,11 +58,13 @@ builder.Services.AddIdentity<AppUser, IdentityRole<int>>()
 
 builder.Services.AddCors(options =>
 {
-    options.AddPolicy("AllowAngularApp",
-        policy => policy.WithOrigins("http://localhost:4200")
-                        .AllowAnyHeader()
-                        .AllowAnyMethod()
-                        .AllowCredentials());
+    options.AddPolicy("AllowAngularApp", policy =>
+    {
+        policy.WithOrigins("http://localhost:4200")
+        .AllowAnyHeader()
+        .AllowAnyMethod()
+        .AllowCredentials();
+    });
 });
 
 var jwt = builder.Configuration.GetSection("Jwt");
@@ -77,33 +77,38 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 }).AddJwtBearer(opts =>
 {
-    opts.RequireHttpsMetadata = true;
-    opts.SaveToken = true;
+    opts.Authority = builder.Configuration["Keycloak:Authority"];
+    opts.Audience = builder.Configuration["Keycloak:Audience"];
+    opts.MetadataAddress = builder.Configuration["Keycloak:MetadataAddress"]!;
+    opts.RequireHttpsMetadata = bool.Parse(builder.Configuration["Keycloak:RequireHttpsMetadata"] ?? "true");
+
     opts.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(key),
         ValidateIssuer = true,
-        ValidIssuer = jwt["Issuer"],
+        ValidIssuer = builder.Configuration["Keycloak:ValidIssuer"],
         ValidateAudience = true,
-        ValidAudience = jwt["Audience"],
-        ValidateLifetime = true
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        NameClaimType = "custom_claim",
+        RoleClaimType = "realm_access.roles"
     };
 });
+
+builder.Services.AddAuthorization();
 
 builder.Services.AddControllers();
 
 var app = builder.Build();
-app.UseCors("AllowAngularApp");
 
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-
 app.UseHttpsRedirection();
 
+
+app.UseCors("AllowAngularApp");
 app.UseAuthentication();
 app.UseAuthorization();
 

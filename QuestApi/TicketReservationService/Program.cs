@@ -9,7 +9,6 @@ namespace TicketReservationService
         {
             var builder = WebApplication.CreateBuilder(args);
 
-
             builder.WebHost.ConfigureKestrel(options =>
             {
                 options.ListenAnyIP(7071, listenOptions =>
